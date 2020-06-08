@@ -4,60 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1._1._1_RECTANGLE
+namespace _1._1._3_ANOTHER_TRIANGLE_
 {
     class Program
     {
-        static uint Area(uint a, uint b)
-        {
-            return a * b;
-        }
-
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a:");
-            uint a = 0, b = 0;
+            uint N;
+            Console.WriteLine("Enter N:");
             string input = Console.ReadLine();
-            bool result = uint.TryParse(input, out a);
-            while (a == 0)
-            {
-                if (result)
-                {
-                }
-                else
-                {
-                    Console.WriteLine("Invalid value entered");
-                    Console.WriteLine("Enter a:");
-                    input = Console.ReadLine();
-                    result = uint.TryParse(input, out a);
-                }
-            }
-            Console.WriteLine("Enter b:\t");
-            input = Console.ReadLine();
-            result = uint.TryParse(input, out b);
-            while (b == 0)
-            {
-                if (result)
-                {
-                }
-                else
-                {
-                    Console.WriteLine("Invalid value entered");
-                    Console.WriteLine("Enter a:");
-                    input = Console.ReadLine();
-                    result = uint.TryParse(input, out b);
-                }
-            }
-            if (a < 0 || b < 0)
+            bool result = uint.TryParse(input, out N);
+            if (result)
+            { }
+            else
             {
                 Console.WriteLine("Invalid value entered");
             }
-            else
+            string str = "*";
+            for (int i = 1; i <= N; ++i)
             {
-                Console.WriteLine("Area: {0}", Area(a, b));
+                for (int j = 1; j <= N - i; ++j)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write(str);
+                str = str + "**";
+                Console.WriteLine();
             }
             Console.ReadLine();
-
         }
     }
 }
